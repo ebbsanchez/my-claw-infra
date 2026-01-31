@@ -1,0 +1,28 @@
+{
+  "source": {
+    "root": "/"
+  },
+  "build": {
+    "builder": "DOCKER"
+  },
+  "service": {
+    "name": "openclaw-agent",
+    "ports": [
+      {
+        "port": 8080,
+        "type": "HTTP"
+      }
+    ],
+    "env": {
+      "PORT": "8080",
+      "NODE_ENV": "production",
+      "OPENCLAW_CONFIG_PATH": "/data/config.yaml"
+    },
+    "volumes": [
+      {
+        "dir": "/data",
+        "name": "openclaw-storage"
+      }
+    ]
+  }
+}
